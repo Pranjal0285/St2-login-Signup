@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        *{margin: 0;padding: 0;}
+        #main{
+            width: 100vw;
+            height: 74vh;
+            background-color: aliceblue;
+            padding-top: 150px;
+        }
+        #form_h1{
+            margin-left: 40%;
+            font-size: 40px;
+            color:rgb(36, 36, 36);
+            margin-bottom: 15px;
+        }
+        #container{
+            background-color: lightgreen;
+            width: 22vw;
+            height: 40vh;
+            padding-top: 50px;
+            padding-left: 50px;
+            border-radius: 9.5px;
+            margin-left: 40%;
+        }
+        .form_labels{
+            font-size: 23px;
+            font-weight: bold;
+            color:orangered
+        }
+        .inp{
+            margin-top: 8px;
+            margin-bottom: 8.5px;
+            padding: 6px 2px 6px 4px;
+            width: 18vw;
+            font-size: 16px;
+            border-radius: 5.8px;
+            border: none;
+            cursor: pointer;
+        }
+        .inp:focus{
+            box-shadow: 1px 1px 5px 4px orange;
+        }
+        .gn_lab{
+            font-size: 16.7px;
+            font-weight: 550;
+            margin-left: 10px;
+            margin-bottom: 5px;
+            color: rgb(93, 93, 93);
+        }
+        .gdinp{
+            margin-left: 10px;
+            height: 15px;
+            width: 15px;
+            cursor: pointer;
+        }
+        #submit_btn{
+            width: 180px;
+            font-size: 15px;
+            padding: 5px 0 5px 0;
+            margin-left: 45px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 3px;
+            transition: 0.5s;
+            background-color: rgb(34, 33, 33);
+            color: white;
+            cursor: pointer;
+        }
+        #submit_btn:hover{
+            width: 200px;
+            font-size: 16.5px;
+            border-radius: 15px;
+            margin-left:40px;
+            background-color: whitesmoke;
+            color: grey;
+            transition: 0.5s;
+        }
+        .mssg{
+            background-color: antiquewhite;
+            font-size: 20px;
+            font-weight: bold;
+            color:red;
+            margin-top: -60px;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    </style>
+    <title>Login</title>
+</head>
+<body>
+    <div id="main">
+        <% if(message.length > 0){ %>
+            <div class="mssg"><%= message %></div>
+        <% } %>
+        <h1 id="form_h1">Sign In!</h1>
+        <div id="container">
+            <form action="/log" method="post">
+                
+                <label class="form_labels">Username</label><br/>
+                <input class="inp" type="text" name="username" required placeholder="Please Enter a Username"><br/>       <!--MobileNo.-->
+    
+                <label class="form_labels">Password</label><br/>
+                <input class="inp" type="password" name="pswd" required placeholder="Please Create Valid Password"><br/>  <!--Password-->
+                
+                <input id="submit_btn" type="submit" value="Log In">               <!--Submit Button-->
+
+                <br/><br/>
+                &ensp;&ensp;&ensp;&ensp;<a href="/">Dont Have Account, Register Here!</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

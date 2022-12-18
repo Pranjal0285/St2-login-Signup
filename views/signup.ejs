@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        *{margin: 0;padding: 0;}
+        #main{
+            width: 100vw;
+            height: 79vh;
+            background-color: aliceblue;
+            padding-top: 85px;
+        }
+        #form_h1{
+            margin-left: 38.5%;
+            font-size: 40px;
+            color:rgb(36, 36, 36);
+            margin-bottom: 15px;
+        }
+        #container{
+            background-color: lightgreen;
+            width: 22vw;
+            height: 68vh;
+            padding-top: 20px;
+            padding-left: 50px;
+            border-radius: 9.5px;
+            margin-left: 38.5%;
+        }
+        .form_labels{
+            font-size: 23px;
+            font-weight: bold;
+            color:orangered
+        }
+        .inp{
+            margin-top: 4px;
+            margin-bottom: 4.5px;
+            padding: 6px 2px 6px 4px;
+            width: 18vw;
+            font-size: 16px;
+            border-radius: 5.8px;
+            border: none;
+            cursor: pointer;
+        }
+        .inp:focus{
+            box-shadow: 1px 1px 5px 4px orange;
+        }
+        .gn_lab{
+            font-size: 16.7px;
+            font-weight: 550;
+            margin-left: 10px;
+            margin-bottom: 5px;
+            color: rgb(93, 93, 93);
+        }
+        .gdinp{
+            margin-left: 10px;
+            height: 15px;
+            width: 15px;
+            cursor: pointer;
+        }
+        #submit_btn{
+            width: 180px;
+            font-size: 15px;
+            padding: 3px 0 3px 0;
+            margin-left: 45px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 3px;
+            transition: 0.5s;
+            background-color: rgb(34, 33, 33);
+            color: white;
+            cursor: pointer;
+        }
+        #submit_btn:hover{
+            width: 200px;
+            font-size: 16.5px;
+            border-radius: 15px;
+            margin-left:40px;
+            background-color: whitesmoke;
+            color: grey;
+            transition: 0.5s;
+        }
+        .mssg{
+            background-color: antiquewhite;
+            font-size: 20px;
+            font-weight: bold;
+            color:red;
+            margin-top: -40px;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    </style>
+
+    <title>Sign-Up</title>
+</head>
+<body>
+    <div id="main">
+        <% if(message.length > 0){ %>
+            <div class="mssg"><%= message %></div>
+        <% } %>
+        <h1 id="form_h1">Register!</h1>
+        <div id="container">
+            <form action="/save" method="post">
+
+                <label class="form_labels">Name</label><br/>
+                <input class="inp" type="text" name="fname" required placeholder="Please Enter Your Name"><br/>             <!--Name-->
+                
+                <label class="form_labels">Username</label><br/>
+                <input class="inp" type="text" name="username" required placeholder="Please Enter a Username"><br/>         <!--Username-->
+                
+                <label class="form_labels">Gender</label><br/>
+                <input class="gdinp" type="radio" name="gender" value="M" required ><label class="gn_lab">Male</label><br/>             <!--Gender=Male-->
+                <input class="gdinp" type="radio" name="gender" value="F"><label class="gn_lab">Female</label><br/>                     <!--Gender=Female-->
+                <input class="gdinp" type="radio" name="gender" value="Not Mentioned"><label class="gn_lab">Prefer not to say</label><br/>          <!--Gender=Others--> 
+                
+                <label class="form_labels">Mobile Number</label><br/>
+                <input class="inp" type="tel" pattern="[0-9]{10}" name="phn" required placeholder="Please Enter 10 digit Mobile No."><br/>    <!--MobileNo.-->
+    
+                <label class="form_labels">Password</label><br/>
+                <input class="inp" type="password" name="pswd" required minlength="8" placeholder="Please Create Valid Password"><br/>                <!--Password-->
+                
+                <input id="submit_btn" type="submit" value="Sign Up">               <!--Submit Button-->
+
+                <br/><br/>
+                &ensp;&ensp;&ensp;<a href="/log">Already have Account, Login Here!</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
